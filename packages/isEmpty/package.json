@@ -6,7 +6,7 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs"
   },
   "exports": {
     "./package.json": "./package.json",

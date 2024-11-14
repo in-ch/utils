@@ -2,7 +2,7 @@
  * @param {unknown} value 
  * @returns {boolean} whether the value is empty
  */
-const isEmpty = (value: unknown): boolean => {
+export const isEmpty = (value: unknown): boolean => {
     return (
         value === null ||
         value === undefined ||

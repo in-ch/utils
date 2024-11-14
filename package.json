@@ -1,11 +1,25 @@
 {
   "name": "@in-ch/utils",
+  "description": "😌 very simple utils",
   "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "lerna run build"
+  },
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.1.9"
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "lerna": "^8.1.9",
+    "rollup": "3",
+    "typescript": "^5.6.3"
   }
 }
