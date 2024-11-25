@@ -1,0 +1,40 @@
+{
+  "name": "@in-ch/deepclone",
+  "version": "1.0.0",
+  "description": "🖨️ simply deep clone",
+  "type": "commonjs",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./esm/index.d.mts",
+        "default": "./esm/index.mjs"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./esm/*.d.mts",
+        "default": "./esm/*.mjs"
+      },
+      "default": {
+        "types": "./*.d.ts",
+        "default": "./*.js"
+      }
+    }
+  },
+  "files": [
+    "**"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
