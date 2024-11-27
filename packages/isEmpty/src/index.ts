@@ -1,5 +1,5 @@
 /**
- * @param {unknown} value
+ * @param {unknown} value something any value
  * @returns {boolean} whether the value is empty
  */
 export const isEmpty = (value: unknown): boolean => {

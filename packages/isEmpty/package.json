@@ -6,7 +6,9 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs"
+    "test": "jest -c ../../jest.config.js",
+    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs",
+    "publish": "npm publish && rm -rf dist"
   },
   "exports": {
     "./package.json": "./package.json",
