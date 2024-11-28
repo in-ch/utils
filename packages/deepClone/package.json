@@ -7,9 +7,11 @@
   "types": "./index.d.ts",
   "scripts": {
     "test": "jest -c ../../jest.config.js",
-    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs",
-    "publish": "npm publish && rm -rf dist"
+    "prebuild": "node ../../scripts/sync-rollup-config.js",
+    "build": "rollup -c --bundleConfigAsCjs && rm -rf rollup.config.js",
+    "publish": "npm publish"
   },
+  "dependencies": {},
   "exports": {
     "./package.json": "./package.json",
     ".": {

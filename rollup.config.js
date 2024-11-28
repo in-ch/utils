@@ -1,13 +1,10 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import terser from '@rollup/plugin-terser';
-import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
-import * as fs from 'fs';
-import path from 'path';
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 const PACKAGE_NAME = process.cwd();
-const pkg = JSON.parse(fs.readFileSync(path.join(PACKAGE_NAME, 'package.json'), 'utf-8'));
 
 const isCommonModule = PACKAGE_NAME.includes('package/common-module');
 const commonjsOptions = {
@@ -20,7 +17,7 @@ const babelOptions = {
   exclude: /node_modules/,
   extensions,
   configFile: '../../babel.config.json',
-  babelHelpers: 'runtime'
+  babelHelpers: 'runtime',
 };
 const nodeOptions = {
   extensions,
@@ -31,7 +28,9 @@ const typescriptOptions = {
   declarationDir: 'dist',
   emitDeclarationOnly: true,
   declarationMap: true,
-  exclude: ["**/__tests__", "**/*.test.ts", "**/*.test.tsx"],
+  exclude: ['**/__tests__', '**/*.test.ts', '**/*.test.tsx'],
+  module: 'NodeNext',
+  moduleResolution: 'NodeNext',
 };
 
 export default {
@@ -41,13 +40,13 @@ export default {
       dir: 'dist',
       format: 'cjs',
       exports: 'auto',
-      entryFileNames: `index.cjs.js`, 
+      entryFileNames: `index.cjs.js`,
     },
     {
       dir: 'dist',
       format: 'es',
-      entryFileNames:  `index.esm.js`,
-    }
+      entryFileNames: `index.esm.js`,
+    },
   ],
   plugins: [
     nodeResolve(nodeOptions),

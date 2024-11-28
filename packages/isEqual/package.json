@@ -1,5 +1,5 @@
 {
-  "name": "@in-ch/isdeepequal",
+  "name": "@in-ch/isequal",
   "version": "1.0.0",
   "description": "😵‍💫 Deeply compares two values to determine if they are equivalent.",
   "type": "commonjs",
@@ -7,9 +7,11 @@
   "types": "./index.d.ts",
   "scripts": {
     "test": "jest -c ../../jest.config.js",
-    "build": "rollup -c ../../rollup.config.js --bundleConfigAsCjs",
+    "prebuild": "node ../../scripts/sync-rollup-config.js",
+    "build": "rollup -c --bundleConfigAsCjs && rm -rf rollup.config.js",
     "publish": "npm publish && rm -rf dist"
   },
+  "dependencies": {},
   "exports": {
     "./package.json": "./package.json",
     ".": {
