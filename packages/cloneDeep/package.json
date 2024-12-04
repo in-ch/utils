@@ -1,5 +1,5 @@
 {
-  "name": "@in-ch/deepclone",
+  "name": "@in-ch/clonedeep",
   "version": "1.0.0",
   "description": "🖨️ simply deep clone",
   "type": "commonjs",
