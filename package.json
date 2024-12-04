@@ -7,7 +7,8 @@
     "test": "pnpm recursive run test",
     "build": "pnpm recursive run build",
     "prepare": "husky",
-    "publish": "pnpm recursive run publish"
+    "publish": "pnpm recursive run publish",
+    "bench": "pnpm vitest bench"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -15,7 +16,6 @@
       "prettier --write"
     ]
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
@@ -31,8 +31,10 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/eslint": "^9.6.1",
     "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.13",
     "@types/mocha": "^10.0.9",
     "commitlint": "^19.6.0",
+    "es-toolkit": "^1.27.0",
     "eslint": "^9.15.0",
     "eslint-plugin-jsdoc": "^50.5.0",
     "eslint-plugin-no-for-of-array": "^0.1.0",
@@ -43,6 +45,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "js-yaml": "^4.1.0",
     "lint-staged": "^15.2.10",
+    "lodash": "^4.17.21",
     "prettier": "^3.4.0",
     "prettier-plugin-sort-re-exports": "^0.1.0",
     "rollup": "3",

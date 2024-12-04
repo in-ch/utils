@@ -1,0 +1,44 @@
+{
+  "name": "@in-ch/chunk",
+  "version": "1.0.0",
+  "description": "🖨️ simply chunk",
+  "type": "commonjs",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "jest -c ../../jest.config.js",
+    "prebuild": "node ../../scripts/sync-rollup-config.js",
+    "build": "rollup -c --bundleConfigAsCjs && rm -rf rollup.config.js",
+    "publish": "npm publish"
+  },
+  "dependencies": {},
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./esm/index.d.mts",
+        "default": "./esm/index.mjs"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./esm/*.d.mts",
+        "default": "./esm/*.mjs"
+      },
+      "default": {
+        "types": "./*.d.ts",
+        "default": "./*.js"
+      }
+    }
+  },
+  "files": [
+    "**"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
