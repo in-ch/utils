@@ -8,7 +8,7 @@
  * @returns {boolean} `true` if the value is an object and not `null`, otherwise `false`
  */
 export const isObject = (obj: unknown): obj is Record<string, unknown> => {
-  return typeof obj === "object" && obj !== null;
+  return typeof obj === 'object' && obj !== null;
 };
 
 /**
@@ -29,14 +29,9 @@ export const isObject = (obj: unknown): obj is Record<string, unknown> => {
  */
 export const isDeepEqual = (value: unknown, other: unknown): boolean => {
   if (value === other) {
-    return true
-  };
-  if (
-    typeof value !== "object" ||
-    value === null ||
-    typeof other !== "object" ||
-    other === null
-  ) {
+    return true;
+  }
+  if (typeof value !== 'object' || value === null || typeof other !== 'object' || other === null) {
     return false;
   }
   if (!isObject(value) || !isObject(other)) {
@@ -45,12 +40,9 @@ export const isDeepEqual = (value: unknown, other: unknown): boolean => {
   const valueKeys = Object.keys(value);
   const otherKeys = Object.keys(other);
   if (valueKeys.length !== otherKeys.length) {
-    return false
-  };
-  return valueKeys.every((key) =>
-    isDeepEqual(
-      (value as Record<string, unknown>)[key],
-      (other as Record<string, unknown>)[key]
-    )
+    return false;
+  }
+  return valueKeys.every(key =>
+    isDeepEqual((value as Record<string, unknown>)[key], (other as Record<string, unknown>)[key])
   );
 };

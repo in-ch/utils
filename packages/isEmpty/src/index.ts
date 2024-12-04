@@ -3,10 +3,10 @@
  * @returns {boolean} whether the value is empty
  */
 export const isEmpty = (value: unknown): boolean => {
-  if (value === "" || value === null || value === undefined) {
+  if (value === '' || value === null || value === undefined) {
     return true;
   }
-  if (typeof value === "object") {
+  if (typeof value === 'object') {
     if (value instanceof Map) {
       return value.size === 0;
     }
